@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amrullah | Web Developer Portfolio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --dark-color: #212529;
+            --light-bg: #f8f9fa;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            scroll-behavior: smooth;
+            color: #333;
+        }
+
+        /* Modern Navbar Glassmorphism */
+        .navbar {
+            backdrop-filter: blur(10px);
+            background-color: rgba(33, 37, 41, 0.9);
+            transition: 0.3s;
+        }
+
+        /* Hero Section with Mesh Gradient */
+        .hero-section {
+            background: radial-gradient(circle at top right, #0d6efd22, transparent),
+                        radial-gradient(circle at bottom left, #0d6efd11, transparent);
+            padding: 150px 0 100px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Section Styling */
+        section { padding: 100px 0; }
+        .section-title {
+            font-weight: 700;
+            position: relative;
+            margin-bottom: 60px;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Modern Card Project */
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+        }
+        .card-img-top {
+            transition: transform 0.5s ease;
+        }
+        .card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+
+        /* Skill Icon Animation */
+        .skill-box {
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .skill-box:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        .skill-box:hover i { color: white !important; }
+
+        /* Footer */
+        footer { background: #111; color: #888; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">Amrullah<span class="text-primary">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase fw-semibold" style="font-size: 0.85rem; letter-spacing: 1px;">
+                    <li class="nav-item"><a class="nav-link px-3" href="#about">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#skills">Keahlian</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#projects">Proyek</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <h5 class="text-primary fw-bold mb-3">Selamat Datang di Portfolio Saya</h5>
+                    <h1 class="display-3 fw-bold mb-4 text-dark">Saya Amrullah.</h1>
+                    <p class="lead text-secondary mb-5">Seorang <span class="text-dark fw-bold">Fullstack Web Developer</span> yang berfokus membangun pengalaman digital yang bersih, fungsional, dan berorientasi pada pengguna.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#projects" class="btn btn-primary btn-lg rounded-pill px-4">Lihat Proyek</a>
+                        <a href="#contact" class="btn btn-outline-dark btn-lg rounded-pill px-4">Hubungi Saya</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="zoom-in">
+                    <img src="img/profile.jpg" class="rounded-circle profile-img" alt="Amrullah, fullstack web developer, professional headshot portrait">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="bg-light">
+        <div class="container text-center">
+            <h2 class="section-title" data-aos="fade-up">Tentang Saya</h2>
+            <div class="row justify-content-center mt-4" data-aos="fade-up">
+                <div class="col-lg-8">
+                    <p class="lead text-secondary">Saya memiliki gairah dalam mengubah ide menjadi kode. Dengan pengalaman dalam pengembangan Frontend dan Backend, saya memastikan setiap baris kode yang saya tulis memberikan dampak nyata bagi bisnis dan kenyamanan pengguna.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title" data-aos="fade-up">Keahlian Utama</h2>
+            </div>
+            <div class="row g-4 mt-2">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-box text-center">
+                        <i class="bi bi-code-slash display-3 text-primary mb-3"></i>
+                        <h4>Frontend</h4>
+                        <p class="text-secondary">React.js, Vue.js, Bootstrap 5, Tailwind CSS.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-box text-center">
+                        <i class="bi bi-database-fill-gear display-3 text-primary mb-3"></i>
+                        <h4>Backend</h4>
+                        <p class="text-secondary">Node.js, Laravel, PostgreSQL, Firebase.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-box text-center">
+                        <i class="bi bi-layers display-3 text-primary mb-3"></i>
+                        <h4>UI/UX Design</h4>
+                        <p class="text-secondary">Figma, Adobe XD, Wireframing, Prototyping.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title" data-aos="fade-up">Proyek Terbaru</h2>
+            </div>
+            <div class="row g-4 mt-2">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100 shadow-sm">
+                        <img src="img/evaluasi-guru.png" class="card-img-top" alt="Project 1">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold">Evaluasi Guru </h5>
+                            <p class="text-secondary small">Aplikasi untuk menghitung kinerja guru terbaik perpriode dengan otomatis sesuai data</p>
+                            <div class="d-flex gap-2">
+                                 <span class="badge bg-primary-subtle text-primary">Bootstrap</span>
+                                     <span class="badge bg-primary-subtle text-primary">Html</span>
+                                     <span class="badge bg-primary-subtle text-primary">JavaScript</span>
+                                          <span class="badge bg-primary-subtle text-primary">css</span>
+                                     <span class="badge bg-primary-subtle text-primary">PHP</span>
+                                <span class="badge bg-primary-subtle text-primary">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm">
+                        <img src="img/ptredjo.png" class="card-img-top" alt="Project 2">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold">Arsip Data Laporan</h5>
+                            <p class="text-secondary small">Website untuk Arsip Data PT dan Karyawan</p>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary-subtle text-primary">Bootstrap</span>
+                                     <span class="badge bg-primary-subtle text-primary">Html</span>
+                                        <span class="badge bg-primary-subtle text-primary">JavaScript</span>
+                                          <span class="badge bg-primary-subtle text-primary">css</span>
+                                     <span class="badge bg-primary-subtle text-primary">PHP</span>
+                                <span class="badge bg-primary-subtle text-primary">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Project 3">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold">Joki Tugas Website</h5>
+                            <p class="text-secondary small">Platform kolaborasi tim untuk mengatur tugas harian secara real-time.</p>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary-subtle text-primary">PHP</span>
+                                <span class="badge bg-primary-subtle text-primary">MySQL</span>
+                                   <span class="badge bg-primary-subtle text-primary">JavaScript</span>
+                                <span class="badge bg-primary-subtle text-primary">Html</span>
+                                <span class="badge bg-primary-subtle text-primary">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="contact">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up">Mari Berkolaborasi</h2>
+                <p class="text-secondary" data-aos="fade-up">Klik tombol di bawah untuk langsung terhubung dengan WhatsApp saya.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center" data-aos="zoom-in">
+                    <div class="p-5 bg-light rounded-4 shadow-sm border">
+                        <i class="bi bi-whatsapp display-1 text-success mb-4"></i>
+                        <h3 class="fw-bold mb-3">Hubungi via WhatsApp</h3>
+                        <p class="mb-4 text-secondary">Saya biasanya membalas dalam hitungan menit. Mari diskusikan proyek luar biasa Anda!</p>
+                        
+                        <a href="https://wa.me/6285773805615?text=Halo%20Amrullah,%20saya%20tertarik%20untuk%20bekerja%20sama%20dengan%20Anda." 
+                           target="_blank" 
+                           class="btn btn-success btn-lg px-5 py-3 rounded-pill fw-bold shadow">
+                            <i class="bi bi-chat-dots-fill me-2"></i> Chat Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5">
+        <div class="container text-center">
+            <h3 class="fw-bold text-white mb-4">Amrullah<span class="text-primary">.</span></h3>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="https://github.com/Amrull07" target="_blank" class="text-white fs-4">
+                <i class="bi bi-github"></i>
+            </a>
+
+            <a href="https://linkedin.com/in/Amrullah." target="_blank" class="text-white fs-4">
+                <i class="bi bi-linkedin"></i>
+            </a>
+
+            <a href="https://instagram.com/heyrull07" target="_blank" class="text-white fs-4">
+                <i class="bi bi-instagram"></i>
+            </a>
+            </div>
+            <hr class="opacity-25 mb-4">
+            <p class="mb-0 small">&copy; 2025 Amrullah.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('shadow');
+            } else {
+                document.querySelector('.navbar').classList.remove('shadow');
+            }
+        });
+    </script>
+</body>
+</html>
